@@ -6,6 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import styles from './Styles/DetailsScreenStyle'
 import { apply } from '@Themes/OsmiProvider'
 import DetailsCard from '@Components/DetailsCard'
+import DetailsMiniCard from '@Components/DetailsMiniCard'
 
 const DetailsScreen = ({ route }) => {
   const { item } = route.params
@@ -18,6 +19,11 @@ const DetailsScreen = ({ route }) => {
             Your Saving
           </Text>
           <DetailsCard item={item} />
+          <Text style={apply('font-bold text-3xl my-4')}>Transaction</Text>
+          {item?.transactions &&
+            item.transactions.map((item) => (
+              <DetailsMiniCard key={item.id} item={item} />
+            ))}
         </View>
       </ScrollView>
     </SafeAreaView>

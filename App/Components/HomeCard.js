@@ -14,7 +14,7 @@ import { formatMoney } from '@Lib/TextUtils'
 
 const HomeCard = ({ item, onPress }) => {
   const { spent, total } = item
-  const percentage = (spent * 100) / total - 24
+  const percentage = (spent * 100) / total
 
   return (
     <View style={apply(`rounded-25 h-190 ${item.background} p-2`)}>
@@ -25,8 +25,7 @@ const HomeCard = ({ item, onPress }) => {
           style={apply('w-200 h-200 self-center')}
         />
         <View style={apply('rounded-15 overflow-hidden -top-4')}>
-          <TouchableNativeFeedback onPress={onPress}
-          >
+          <TouchableNativeFeedback onPress={onPress}>
             <View style={apply('bg-white rounded-15 p-4')}>
               <View style={apply('row items-center mb-1')}>
                 <Text style={apply('flex font-bold text-base')}>
@@ -50,7 +49,10 @@ const HomeCard = ({ item, onPress }) => {
               </Text>
               <View style={apply('h-10 bg-blue-primary rounded-lg mt-2')}>
                 <View
-                  style={apply(`h-10 w/${percentage} bg-blue-third rounded-lg`)}
+                  style={[
+                    apply('h-10 bg-blue-third rounded-lg'),
+                    { width: `${percentage}%` },
+                  ]}
                 />
               </View>
             </View>

@@ -49,6 +49,7 @@ export default {
     size: {
       xxl: 40,
       s: 10,
+      mini: 9,
     },
   },
 }

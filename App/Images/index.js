@@ -11,6 +11,8 @@ const Images = {
   profile: require('./icons/profile.png'),
   send: require('./icons/send.png'),
   union: require('./icons/union.png'),
+  plusBlack: require('./icons/plus-black.png'),
+  minusBlack: require('./icons/minus-black.png'),
 }
 
 export default Images
